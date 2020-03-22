@@ -52,7 +52,7 @@ namespace Ogre
         id                  mResizeObserver;
 #endif
 
-        MetalRenderSystem   *mRenderSystem;
+        //MetalRenderSystem   *mRenderSystem;
 
         inline void checkLayerSizeChanges(void);
     public:
@@ -78,6 +78,8 @@ namespace Ogre
         virtual bool requiresTextureFlipping() const { return false; }
 
         virtual void getCustomAttribute( const String& name, void* pData );
+
+        PixelFormat suggestPixelFormat() const override { return mFormat; }
     };
 }
 
